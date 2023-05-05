@@ -29,9 +29,6 @@ export const stateSlice = createSlice({
     },
   },
 });
-const selectStateSlice = (state: isStore) => {
-  return state.stateValues;
-};
 
 export const { addRow, pickColor, colorize } = stateSlice.actions;
 export default stateSlice.reducer;

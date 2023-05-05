@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { colorize } from "../store/stateSlice";
 
@@ -11,12 +11,12 @@ interface TableCellProps {
 const TableCell = (props: TableCellProps) => {
   const dispatch = useDispatch();
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+  const handleMouseOver = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     dispatch(colorize({ row: props.rowIdx, column: props.colIdx }));
   };
 
-  return <td onClick={handleClick} className={props.color}></td>;
+  return <td onMouseOver={handleMouseOver} className={props.color}></td>;
 };
 
 export default TableCell;
