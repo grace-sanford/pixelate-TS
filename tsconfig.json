@@ -8,6 +8,7 @@
     "sourceMap": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
+    "moduleResolution": "nodenext",
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
