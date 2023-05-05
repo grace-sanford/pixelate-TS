@@ -10,6 +10,7 @@ interface TableCellProps {
 
 const TableCell = (props: TableCellProps) => {
   const dispatch = useDispatch();
+  const [clicked, setClicked] = useState(true);
 
   const handleMouseOver = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
