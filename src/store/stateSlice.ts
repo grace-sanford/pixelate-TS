@@ -4,8 +4,8 @@ import { isStore } from "../store";
 const NUM_COLUMNS = 20;
 
 interface stateSlice {
-  grid: Array<Array<String>>;
-  selectedColor: String;
+  grid: Array<Array<string>>;
+  selectedColor: string;
 }
 
 let initialState: stateSlice = {

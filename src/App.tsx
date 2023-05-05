@@ -1,11 +1,15 @@
 import React, { MouseEvent } from "react";
 import { useDispatch } from "../node_modules/react-redux/es/exports";
+import Table from "./components/Table";
+import { addRow } from "./store/stateSlice";
+import { AppDispatch } from "./store";
+
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleAddRowClick = (e: MouseEvent<HTMLInputElement>) => {
-    // dispatch(addRow());
+    dispatch(addRow());
   };
 
   return (
@@ -17,7 +21,7 @@ const App: React.FC = () => {
         </button>
         {/* <ColorSelector /> */}
       </div>
-      {/* <Table /> */}
+      <Table />
     </div>
   );
 };
