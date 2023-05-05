@@ -1,0 +1,23 @@
+{
+  "name": "pixelate",
+  "version": "1.0.0",
+  "description": "GHP \"Pixelate\" workshop refactored in TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grace-sanford/pixelate-TS.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Pixelate"
+  ],
+  "author": "Grace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grace-sanford/pixelate-TS/issues"
+  },
+  "homepage": "https://github.com/grace-sanford/pixelate-TS#readme"
+}
