@@ -1,7 +1,7 @@
 {
   "name": "pixelate",
   "version": "1.0.0",
-  "description": "GHP \"Pixelate\" workshop refactored in TypeScript.",
+  "description": "GHP \"Pixelate\" workshop in TypeScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,10 +14,15 @@
     "TypeScript",
     "Pixelate"
   ],
-  "author": "Grace",
+  "author": "grace",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/grace-sanford/pixelate-TS/issues"
   },
-  "homepage": "https://github.com/grace-sanford/pixelate-TS#readme"
+  "homepage": "https://github.com/grace-sanford/pixelate-TS#readme",
+  "devDependencies": {
+    "webpack": "^5.82.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.3"
+  }
 }
