@@ -14,7 +14,8 @@ module.exports = {
   /** "entry"
    * the entry point
    */
-  entry: "./index.js",
+  entry: "./index.tsx",
+  devtool: 'inline-source-map',
   output: {
     /** "path"
      * the folder path of the output file
@@ -60,7 +61,13 @@ module.exports = {
      * resolve the one with the extension listed first in the array and skip the rest.
      * This is what enables users to leave off the extension when importing
      */
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+    // Add support for TypeScripts fully qualified ESM imports.
+    extensionAlias: {
+      ".js": [".js", ".ts"],
+      ".cjs": [".cjs", ".cts"],
+      ".mjs": [".mjs", ".mts"],
+    },
   },
   module: {
     /** "rules"
@@ -69,12 +76,45 @@ module.exports = {
      * add it to the bundle. And in this process, kindly make sure to exclude node_modules folder from
      * being searched"
      */
+    // rules: [
+    //         {
+    //           test: /\.tsx?$/,
+    //           use: ['ts-loader', 'babel-loader'],
+    //           exclude: /node_modules/,
+    //         },
+    // ],
     rules: [
       {
-        test: /\.(js|jsx)$/, //kind of file extension this rule should look for and apply in test
-        exclude: /node_modules/, //folder to be excluded
-        use: "babel-loader", //loader which we are going to use
+        test: /\.tsx?$/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.js$/,
+        use: ["source-map-loader"],
+        enforce: "pre"
       },
     ],
   },
 };
+
+// const path = require('path');
+
+// module.exports = {
+//   entry: './src/index.ts',
+//   module: {
+//     rules: [
+//       {
+//         test: /\.tsx?$/,
+//         use: 'ts-loader',
+//         exclude: /node_modules/,
+//       },
+//     ],
+//   },
+//   resolve: {
+//     extensions: ['.tsx', '.ts', '.js'],
+//   },
+//   output: {
+//     filename: 'bundle.js',
+//     path: path.resolve(__dirname, 'dist'),
+//   },
+// };
